@@ -17,9 +17,10 @@
     }
     ?>
 
+    <h1>Activity 2</h1>
     <?php
 
-    $pass = "correct";
+    $pass = "password123";
 
     $userInput = "";
 

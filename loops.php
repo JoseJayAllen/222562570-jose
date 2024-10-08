@@ -1,35 +1,39 @@
-<?php
-echo "activity 1:\n";
-echo "numbers from 1 to 10:\n";
-$count=1;
-while ($count <=10){
-    echo $count . " ";
-    $count++;
-}
-echo "\n";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Activity 1</h1>
+    <?php
 
-echo "numbers from 1 to 20:\n";
-$count=1;
-while ($count <=20){
-    if ($count % 2 == 0){
-    echo $count . " ";
+    $count=2;
+
+    while ($count <= 20){
+        echo $count. " ";
+        $count +=2;
     }
-    $count++;
-}
-echo "\n";
+    ?>
 
-echo "Activity 2:\n";
-$password = "";
-do{
-    echo "Please enter the password: ";
-    $password = trim(fgets(STDIN));
+    <?php
 
-    if ($password !== "password123"){
-        echo "incorrect password.\n";
+    $pass = "correct";
 
-    }
-} while ($password !== "password123");
+    $userInput = "";
 
-echo "Access Granted.\n"
+    do {
+        echo "Please enter the password: ";
 
-?>
+        $userInput = trim(fgets(STDIN));
+
+        if ($userInput !== $pass){
+            echo "Incorrect password.\n";
+        }
+    } while ($userInput !== $pass);
+        echo "Access Granted.\n";
+    ?>
+
+</body>
+</html>

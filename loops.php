@@ -39,7 +39,7 @@
     <h1>Activity 3</h1>
     <?php 
     for ($i = 1; $i <=10; $i++){
-        echo "7 x $i = " .(7*$i)." "; 
+        echo "7 x $i = " .(7*$i)."\n"; 
     }
     ?>
 
@@ -83,14 +83,14 @@
     <h1>Activity 7</h1>
     <?php
     $stud = [
-        "name" => "John",
-        "age" => 21,
+        "name" => "Alice",
+        "age" => 20,
         "grade" => "A",
         "city" => "Baguio"
     ];
 
     foreach ($stud as $key => $value){
-        echo "$key: $value<br>";
+        echo "$key: $value\n";
     }
     ?>
 
@@ -176,10 +176,10 @@
 
     $length = strlen($input);
     for ($i = $length - 1; $i >= 0; $i--){
-        $reserved .= $input[$i];
+        $reversed .= $input[$i];
     }
 
-    echo "Reverved string: " . $reversed . "\n";
+    echo "Reversed string: " . $reversed . "\n";
     ?>
 </body>
 </html>

@@ -18,23 +18,11 @@
     ?>
 
     <h1>Activity 2</h1>
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Password Validator</title>
-    </head>
-    <body>
-        <form method="post" action="">
-            <label> Please enter the password:</label>
-            <input type="password" name="password">
-            <input type="submit" value="Submit">
-        </form>
-        
-    </body>
-    </html>
+    <form method="post" action="">
+        <label> Please enter the password:</label>
+        <input type="password" name="password">
+        <input type="submit" value="Submit">
+    </form>
     <?php
 
     $pass = "password123";
@@ -138,22 +126,11 @@
     ?>
 
     <h1>Activity 10</h1>
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Prime Number Checker</title>
-    </head>
-    <body>
-        <form method="post" action="">
-            <label>Enter a number:</label>
-            <input type ="number" name="number">
-            <input type ="submit" value="check">
-        </form>
-    </body>
-    </html>
+    <form method="post" action="">
+        <label>Enter a number:</label>
+        <input type ="number" name="number">
+        <input type ="submit" value="check">
+    </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['number'])){
         $number = $_POST['number'];

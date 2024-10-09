@@ -18,28 +18,42 @@
     ?>
 
     <h1>Activity 2</h1>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Validator</title>
+    </head>
+    <body>
+        <form method="post" action="">
+            <label> Please enter the password:</label>
+            <input type="password" name="password">
+            <input type="submit" value="Submit">
+        </form>
+        
+    </body>
+    </html>
     <?php
 
     $pass = "password123";
 
-    $userInput = "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['password'])){
+        $input_password = $_POST['password'];
 
-    do {
-        echo "Please enter the password: ";
-
-        $userInput = trim(fgets(STDIN));
-
-        if ($userInput !== $pass){
-            echo "Incorrect password.\n";
+        if ($input_password === $pass) {
+            echo "Access Granted.";
+        } else {
+            echo "Incorrect password.";
         }
-    } while ($userInput !== $pass);
-        echo "Access Granted.\n";
+    }
     ?>
 
     <h1>Activity 3</h1>
     <?php 
     for ($i = 1; $i <=10; $i++){
-        echo "7 x $i = " .(7*$i)."\n"; 
+        echo "7 x $i = " .(7*$i)."<br>"; 
     }
     ?>
 
@@ -75,9 +89,9 @@
     $counter = 1;
 
     foreach ($mov as $movie){
-        echo $counter . ". " . $movie . "\n";
-    }
+        echo $counter . ". " . $movie . "<br>";
     $counter++;
+    }
     ?>
 
     <h1>Activity 7</h1>
@@ -90,7 +104,7 @@
     ];
 
     foreach ($stud as $key => $value){
-        echo "$key: $value\n";
+        echo "$key: $value<br>";
     }
     ?>
 
@@ -124,27 +138,43 @@
     ?>
 
     <h1>Activity 10</h1>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prime Number Checker</title>
+    </head>
+    <body>
+        <form method="post" action="">
+            <label>Enter a number:</label>
+            <input type ="number" name="number">
+            <input type ="submit" value="check">
+        </form>
+    </body>
+    </html>
     <?php
-    echo "Please enter a number: ";
-    $number = intval(trim(fgets(STDIN)));
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['number'])){
+        $number = $_POST['number'];
+        $is_prime = true;
 
-    $Prime=true;
-
-    if ($number <= 1) {
-        $Prime = false;
-    } else {
-        for ($i = 2; $i <= sqrt($number); $i++){
-            if ($number % $i == 0){
-                $Prime = false;
-                break;
+        if ($number < 2){
+            $is_prime = false;
+        } else {
+            for ($i = 2; $i <= sqrt($number); $i++){
+                if ($number % $i == 0) {
+                    $is_prime = false;
+                    break;
+                }
             }
         }
-    }
 
-    if ($Prime) {
-        echo "$number is a prime number.\n";
-    } else{
-        echo "$number is not a prime number.\n";
+        if ($is_prime){
+            echo "$number is a prime number.";
+        } else {
+            echo "$number is not a prime number.";
+        }
     }
     ?>
 
@@ -168,18 +198,26 @@
     ?>
 
     <h1>Activity 12</h1>
+    <form method="POST" action="">
+        <label for="inputString">Enter a string:</label>
+        <input type="text" name="inputString" id="inputString" required>
+        <input type="submit" value="Reverse String">
+    </form>
+
     <?php
-    echo "Enter a word: ";
-    $input = trim (fgets(STDIN));
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['inputString'])) {
+        $inputString = $_POST['inputString'];
 
-    $reversed = "";
+        $reversedString ="";
 
-    $length = strlen($input);
-    for ($i = $length - 1; $i >= 0; $i--){
-        $reversed .= $input[$i];
+        for ($i = strlen($inputString)-1; $i >= 0; $i--) {
+            $reversedString .= $inputString[$i];
+        }
+
+        echo "Input: " . htmlspecialchars($inputString) . "<br>";
+        echo "Output: " . htmlspecialchars($reversedString) . "";
     }
-
-    echo "Reversed string: " . $reversed . "\n";
     ?>
+
 </body>
 </html>

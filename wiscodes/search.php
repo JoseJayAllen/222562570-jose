@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -23,10 +23,10 @@
         
                 // Connect to the database
                 $servername = "localhost";
-                $username = "root"; // Replace with your database username
-                $password = "052781"; // Replace with your database password
+                $username = "u0_a577"; // Replace with your database username
+                $password = ""; // Replace with your database password
                 $dbname = "search_db"; // The database we created earlier
-        
+
                 // Create a connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
         
